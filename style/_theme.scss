@@ -1,0 +1,447 @@
+@import 'theme-variables';
+
+body {
+    scroll-behavior: smooth;
+    height: 100vh;
+    background: $blue url(../assets/background.svg) no-repeat right top;
+
+    header {
+        height: 100px;
+        width: 80%;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+
+        svg {
+            fill: white;
+            margin-right: 20px;
+        }
+
+        h2 {
+            span {
+                font-weight: 300;
+            }
+        }
+    }
+
+    main {
+        z-index: 2;
+
+        #top-content {
+            width: 80%;
+            margin: 100px auto 200px;
+
+            #text {
+                margin-bottom: 50px;
+                width: 460px;
+
+                h1 {
+                    font-size: 60px
+                }
+
+                p {
+                    color: $purple;
+                    font-size: 24px;
+                }
+            }
+
+            form {
+                display: flex;
+                align-items: center;
+                position: relative;
+                width: 600px;
+
+                input {
+                    width: 100%;
+                    color: #6c757d;
+                    height: 60px;
+                    outline: none;
+                    padding: 0 50px 0 30px;
+                    font-size: 24px;
+                }
+
+                button {
+                    position: absolute;
+                    right: 0;
+                    height: 100%;
+                    width: 50px;
+                    font-size: 30px;
+
+                    i {
+                        color: $blue;
+                    }
+                }
+            }
+        }
+
+        #main-content {
+            display: flex;
+            flex-direction: column;
+            position: relative;
+
+            .container {
+                background: white;
+                min-height: calc(100vh - 678px);
+                padding: 150px 10% 50px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                #user {
+                    position: absolute;
+                    top: -100px;
+                    display: flex;
+                    margin: auto;
+
+                    #avatar {
+                        position: relative;
+                        display: flex;
+                        align-items: center;
+                        border-radius: 10px;
+                        box-shadow: 0 25px 50px rgba($color: #000000, $alpha: .3);
+                        margin-right: 50px;
+                        width: 200px;
+                        height: 200px;
+
+                        img {
+                            max-width: 200px;
+                            border-radius: 10px;
+                        }
+
+                        >svg {
+                            position: absolute;
+                            bottom: 10px;
+                            right: 10px;
+                            border-radius: 50%;
+                            transition: ease .3s;
+
+                            path {
+                                fill: white;
+                                filter: none;
+                                transition: ease .3s;
+                            }
+
+                        }
+
+                        >span {
+                            display: none;
+                        }
+
+                        &:hover {
+                            >svg {
+                                transform: scale(1.3);
+
+                                path {
+                                    filter: drop-shadow(0 0 1.2px white);
+                                }
+                            }
+                        }
+
+                        &.owner {
+                            >span {
+                                display: inline;
+                                visibility: hidden;
+                                opacity: 0;
+                                width: 0;
+                                height: 25px;
+                                font-size: 12px;
+                                background: white;
+                                border-radius: 15px 5px 5px 0;
+                                font-weight: bold;
+                                box-shadow: 0px 0px 10px 1px white;
+                                transition: ease .6s;
+
+                                position: absolute;
+                                bottom: 25px;
+                                left: -10px;
+
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+
+                                &::before {
+                                    content: '';
+                                    width: 10px;
+                                    height: 15px;
+                                    background: $blue;
+                                    position: absolute;
+                                    left: 0;
+                                    top: 25px;
+                                    border-radius: 20px 0 0 20px;
+                                    z-index: 1;
+                                }
+
+                                &::after {
+                                    content: '';
+                                    width: 10px;
+                                    height: 10px;
+                                    background: white;
+                                    position: absolute;
+                                    left: 0;
+                                    top: 25px;
+                                }
+
+                                i {
+                                    margin-right: 10px;
+                                }
+                            }
+
+                            &:hover {
+                                >span {
+                                    visibility: visible;
+                                    opacity: 1;
+                                    width: 130px;
+                                    color: $blue;
+
+                                    i {
+                                        color: #faa307;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    #follows {
+                        color: black;
+
+                        i {
+                            color: black;
+                        }
+
+                        span {
+                            color: black;
+                        }
+                    }
+
+                    #infos {
+                        display: flex;
+                        flex-direction: column;
+                        min-width: 300px;
+
+                        #top {
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+
+                            h3 {
+                                font-size: 40px;
+                                font-weight: lighter;
+                                font-style: italic;
+
+                                &::before {
+                                    content: '<';
+                                    color: $purple;
+                                }
+
+                                &::after {
+                                    content: '/>';
+                                    color: $purple;
+                                }
+                            }
+
+                            #sub-top {
+                                display: flex;
+                                align-items: center;
+                                justify-content: space-around;
+                                margin-top: 10px;
+                                width: 80%;
+
+                                #followers {}
+
+                                #login {
+                                    text-align: center;
+                                    color: $blue;
+                                    font-weight: 900;
+                                    background: white;
+                                    width: auto;
+                                    padding: 2px 20px;
+                                    border-radius: 0 10px 10px;
+                                    align-self: center;
+                                }
+                            }
+                        }
+
+                        #description {
+                            max-width: 550px;
+                            margin-top: 40px;
+                            text-align: justify;
+                            color: black;
+                        }
+                    }
+                }
+
+                #repositories {
+                    display: flex;
+                    flex-wrap: wrap;
+                    width: 100%;
+                    gap: 5%;
+
+                    .repo {
+                        border-radius: 16px;
+                        transition: .4s ease;
+                        position: relative;
+                        display: flex;
+                        align-items: center;
+                        padding: 10px 20px 10px 0;
+                        background: #f2f2f2;
+                        width: 30%;
+                        margin: 10px 0;
+
+                        >svg {
+                            width: 50%;
+                            transition: .4s ease;
+
+                            path {
+                                transition: .5s ease;
+
+                                &:nth-child(2) {
+                                    transform: scale(.9) translateX(3px);
+                                }
+                            }
+                        }
+
+                        .infos-repo {
+                            width: 50%;
+
+                            h3 {
+                                color: $blue;
+                            }
+
+                            p {
+                                color: $gray;
+                                transition: .4s ease;
+                                text-align: justify;
+                                font-style: italic;
+                                font-size: 13px;
+                                overflow: hidden;
+                                max-height: 120px;
+                                display: -webkit-box;
+                                -webkit-line-clamp: 7;
+                                -webkit-box-orient: vertical;
+                            }
+                        }
+
+                        .rocket {
+                            position: absolute;
+                            width: 100%;
+                            height: 100%;
+                            border-radius: 16px;
+                            left: 0;
+                            background: rgba($color: $blue, $alpha: .3);
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            font-size: 72px;
+                            opacity: 0;
+                            visibility: hidden;
+                            font-weight: bold;
+                            z-index: 2;
+                            transition: ease .4s;
+                            animation: texto-foguete 1s infinite;
+                        }
+
+                        &:hover {
+                            cursor: pointer;
+
+                            >svg {
+                                transform: scale(1.05);
+
+                                path:last-child {
+                                    transform: rotateX(-35deg) translateY(9px);
+                                    filter: drop-shadow(0 0 1px rgba(0, 0, 0, .3));
+                                }
+
+                                path:nth-child(2) {
+                                    filter: drop-shadow(0 0 1px rgba(0, 0, 0, .3));
+                                    transform: scale(0.95)translateX(0) rotate(-2deg);
+                                }
+                            }
+
+                            .rocket {
+                                opacity: 1;
+                                visibility: visible;
+                                backdrop-filter: blur(2px);
+
+                                svg {
+                                    .fire {
+                                        animation: fogo .5s infinite;
+                                    }
+
+                                    .body-rocket {
+                                        animation: corpo-foguete .8s infinite;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                #more-repos {
+                    color: white;
+                    background: $blue;
+                    padding: 10px 15px;
+                    border-radius: 8px;
+                    margin-top: 20px;
+                    transition: ease .3s;
+
+                    &:hover,
+                    &:disabled {
+                        opacity: .7;
+                    }
+
+                    &:disabled {
+                        cursor: no-drop
+                    }
+                }
+            }
+        }
+    }
+
+    #alert {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        opacity: 0;
+        visibility: hidden;
+        background: rgba($color: #e40b0b, $alpha: 1);
+        transition: .3s;
+        top: 0;
+
+        #alert-container {
+            display: flex;
+            align-items: center;
+            background: #c30e0e;
+            border-radius: 10px;
+            padding: 10px 20px;
+
+            i,
+            p {
+                font-size: 30px;
+            }
+
+            i {
+                margin-right: 20px;
+            }
+
+        }
+
+        &.show {
+            opacity: 1;
+            visibility: visible;
+            background: rgba($color: #e40b0b, $alpha: .4);
+            backdrop-filter: blur(10px);
+        }
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: url(../assets/github-glow.svg) no-repeat center;
+        z-index: -1;
+    }
+}

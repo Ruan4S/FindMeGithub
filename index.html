@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon">
+    <title>Find me Github</title>
+
+    <link rel="stylesheet" href="style/style.min.css">
+    <script src="https://kit.fontawesome.com/0d064294f9.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+            <path
+                d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+        </svg>
+        <h2>
+            <span>Find me</span> Github
+        </h2>
+    </header>
+
+    <main>
+        <section id="top-content">
+            <div id="text">
+                <h1>
+                    Find repositories<br>
+                    on Github.
+                </h1>
+                <p>
+                    Millions of programmers and companies build, upload, and maintain their software on GitHub. Find
+                    them here!
+                </p>
+            </div>
+            <form onsubmit="searchUser(event, username.value, true)">
+                <input type="text" name="username" id="username">
+                <button type="submit">
+                    <i class="fas fa-search"></i>
+                </button>
+            </form>
+        </section>
+        <section id="main-content">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" preserveAspectRatio="none" viewBox="0 0 1680 40">
+                <path d="M0 40h1680V30S1340 0 840 0 0 30 0 30z" fill="#fff"></path>
+            </svg>
+
+            <div class="container">
+                <div id="user">
+                    <a id="avatar" href="" target="_blank">
+                        <span>
+                            <i class="fas fa-star"></i>CREATOR
+                        </span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24">
+                            <path
+                                d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                        </svg>
+                        <img id="avatar-img" src="" alt="User Picture">
+                    </a>
+
+                    <div id="infos">
+                        <div id="top">
+                            <h3 id="name"> </h3>
+                            <div id="sub-top">
+                                <div>
+                                    <i class="fas fa-user-friends"></i>
+                                    <span id="followers"></span>
+                                </div>
+                                <div>
+                                    <i class="fas fa-walking"></i>
+                                    <span id="following"></span>
+                                </div>
+                                <span id="login"></span>
+                            </div>
+                        </div>
+                        <p id="description">
+                        </p>
+                    </div>
+                </div>
+                <div id="rocket" class="rocket" style="display: none;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="72" height="72" viewBox="0 0 48 48">
+                        <path fill="#FF3D00"
+                            d="M8.444,32.9c1.562-1.563,4.095-1.563,5.657,0c1.562,1.562,1.562,4.095,0,5.656c-1.562,1.563-7.778,2.121-7.778,2.121S6.882,34.462,8.444,32.9z"
+                            class="fire">
+                        </path>
+                        <path fill="#FFEB3B"
+                            d="M9.858,34.314c0.781-0.781,2.048-0.781,2.829,0s0.781,2.047,0,2.828S9.151,37.85,9.151,37.85S9.078,35.096,9.858,34.314z"
+                            class="fire">
+                        </path>
+                        <path fill="#D1C4E9"
+                            d="M29.658,8.858c-2.121,2.12-20.507,20.507-20.507,20.507l8.485,8.484c0,0,18.385-18.384,20.506-20.506c1.118-1.118,2.036-4.391,2.658-7.24l-3.902-3.902C34.047,6.823,30.775,7.741,29.658,8.858z"
+                            class="body-rocket">
+                        </path>
+                        <path fill="#7E57C2"
+                            d="M21.172 41.385L19.05 36.437 27.535 27.951 26.122 36.436zM5.616 25.829L10.565 27.951 19.05 19.466 10.565 20.879zM36.898 6.2l3.902 3.902c.559-2.56.877-4.78.877-4.78S39.459 5.643 36.898 6.2zM17.637 37.85L14.808 37.85 9.151 32.193 9.151 29.365z"
+                            class="body-rocket">
+                        </path>
+                        <g>
+                            <path fill="#311B92"
+                                d="M29.657 15.344000000000001A2 2 0 1 0 29.657 19.344 2 2 0 1 0 29.657 15.344000000000001zM24.707 20.293A2 2 0 1 0 24.707 24.293 2 2 0 1 0 24.707 20.293zM19.758 25.243A2 2 0 1 0 19.758 29.243 2 2 0 1 0 19.758 25.243z"
+                                class="body-rocket">
+                            </path>
+                        </g>
+                    </svg> GO!
+                </div>
+                <svg id="folder" class="folder" style="display: none;" xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 48 48" width="200" height="200">
+                    <path fill="#FFA000" d="M40,12H22l-4-4H8c-2.2,0-4,1.8-4,4v8h40v-4C44,13.8,42.2,12,40,12z" />
+                    <path fill="#FFFFFF"
+                        d="M40,12H8c-2.2,0-4,1.8-4,4v20c0,2.2,1.8,4,4,4h32c2.2,0,4-1.8,4-4V16C44,13.8,42.2,12,40,12z" />
+                    <path fill="#FFCA28"
+                        d="M40,12H8c-2.2,0-4,1.8-4,4v20c0,2.2,1.8,4,4,4h32c2.2,0,4-1.8,4-4V16C44,13.8,42.2,12,40,12z" />
+                </svg>
+                <div id="repositories">
+                    <a href="" class="repo" target="_blank">
+                        <div class="infos-repo">
+                            <h3></h3>
+                            <p></p>
+                        </div>
+                    </a>
+                </div>
+                <button id="more-repos" disabled onclick="loadMoreRepos(repositories)">Show more</button>
+            </div>
+        </section>
+    </main>
+
+    <div id="alert">
+        <div id="alert-container">
+            <i class="fas fa-exclamation-triangle"></i>
+            <p id="alert-error">User not found!</p>
+        </div>
+    </div>
+    
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="./scripts/script.min.js"></script>
+</body>
+
+</html>

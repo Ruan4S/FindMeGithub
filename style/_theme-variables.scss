@@ -1,0 +1,45 @@
+$blue: #040d21;
+$purple: #8193b2;
+$gray: #6c757d;
+
+@keyframes fogo {
+    0% {
+        transform: scale(1) translate(0, 0);
+    }
+
+    50% {
+        transform: scale(1.1) translate(-2px, -3px);
+    }
+
+    100% {
+        transform: scale(1) translate(0, 0);
+    }
+}
+
+@keyframes corpo-foguete {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    50% {
+        transform: rotate(2deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes texto-foguete {
+    0% {
+        color: #FF3D00;
+    }
+
+    50% {
+        color: #FFEB3B;
+    }
+
+    100% {
+        color: #FF3D00;
+    }
+}
